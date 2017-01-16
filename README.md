@@ -1,1 +1,1 @@
-# simple-spring-boot-log4j2-example
+# Simple Spring Boot Log4j2 Example Project
