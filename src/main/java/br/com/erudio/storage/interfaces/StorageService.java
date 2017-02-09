@@ -1,4 +1,4 @@
-package br.com.erudio.storage;
+package br.com.erudio.storage.interfaces;
 
 import org.springframework.core.io.Resource;
 import org.springframework.web.multipart.MultipartFile;
