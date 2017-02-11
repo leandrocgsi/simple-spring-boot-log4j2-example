@@ -1,4 +1,4 @@
-package br.com.erudio.storage;
+package br.com.erudio.storage.exceptions;
 
 public class StorageException extends RuntimeException {
 

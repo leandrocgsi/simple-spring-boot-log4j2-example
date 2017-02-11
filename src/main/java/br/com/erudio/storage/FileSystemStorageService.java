@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.FileSystemUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import br.com.erudio.storage.exceptions.StorageException;
 import br.com.erudio.storage.interfaces.StorageService;
 
 import java.io.IOException;
