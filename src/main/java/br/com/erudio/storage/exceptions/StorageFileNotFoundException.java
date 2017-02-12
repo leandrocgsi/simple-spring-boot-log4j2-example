@@ -1,6 +1,4 @@
-package br.com.erudio.storage;
-
-import br.com.erudio.storage.exceptions.StorageException;
+package br.com.erudio.storage.exceptions;
 
 public class StorageFileNotFoundException extends StorageException {
 
