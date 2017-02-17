@@ -72,6 +72,25 @@ public class FileUploadController {
         return "redirect:/";
     }
     
+    @PostMapping("/xlsx")
+    public String xlsxFileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) throws IOException {
+    	
+    	storageService.store(file);
+    	InputStream initialStream = file.getInputStream();
+    	
+		String pathname = "src//main//resources//targetFile.xlsx";
+		File targetFile = new File(pathname);
+        Files.copy(initialStream, targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        IOUtils.closeQuietly(initialStream);
 
+    	redirectAttributes.addFlashAttribute("message", "You successfully uploaded " + file.getOriginalFilename() + "!");
+    	
+    	return "redirect:/";
+    }
+
+    @ExceptionHandler(StorageFileNotFoundException.class)
+    public ResponseEntity handleStorageFileNotFound(StorageFileNotFoundException exc) {
+        return ResponseEntity.notFound().build();
+    }
 
 }
